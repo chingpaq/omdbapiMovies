@@ -21,6 +21,9 @@
 		61005B3725B83CBE00D4784E /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61005B3625B83CBE00D4784E /* NetworkServices.swift */; };
 		61005B4025B8416F00D4784E /* NetworkServices+OMDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61005B3F25B8416F00D4784E /* NetworkServices+OMDBAPI.swift */; };
 		61005B4A25B8446100D4784E /* OMDBAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61005B4925B8446100D4784E /* OMDBAPIServices.swift */; };
+		61005B6325B85FA200D4784E /* MovieModel+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61005B6225B85FA200D4784E /* MovieModel+Stub.swift */; };
+		61005B6925B863DB00D4784E /* MoviesList.json in Resources */ = {isa = PBXBuildFile; fileRef = 61005B6825B863DB00D4784E /* MoviesList.json */; };
+		61005B6E25B8641100D4784E /* SingleMovie.json in Resources */ = {isa = PBXBuildFile; fileRef = 61005B6D25B8641100D4784E /* SingleMovie.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		61005B3625B83CBE00D4784E /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
 		61005B3F25B8416F00D4784E /* NetworkServices+OMDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkServices+OMDBAPI.swift"; sourceTree = "<group>"; };
 		61005B4925B8446100D4784E /* OMDBAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBAPIServices.swift; sourceTree = "<group>"; };
+		61005B6225B85FA200D4784E /* MovieModel+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieModel+Stub.swift"; sourceTree = "<group>"; };
+		61005B6825B863DB00D4784E /* MoviesList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MoviesList.json; sourceTree = "<group>"; };
+		61005B6D25B8641100D4784E /* SingleMovie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleMovie.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 				61005B5125B8535800D4784E /* User Interface Elements */,
 				61005B3225B838FF00D4784E /* Models */,
 				61005B3B25B83CC400D4784E /* Services */,
+				61005B6725B863A100D4784E /* Data */,
 				61005ADA25B80FF400D4784E /* Assets.xcassets */,
 				61005ADF25B80FF400D4784E /* Info.plist */,
 			);
@@ -153,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				61005B2D25B838F400D4784E /* MovieModel.swift */,
+				61005B6225B85FA200D4784E /* MovieModel+Stub.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +192,15 @@
 				61005ADC25B80FF400D4784E /* LaunchScreen.storyboard */,
 			);
 			path = "Xibs and Storyboards";
+			sourceTree = "<group>";
+		};
+		61005B6725B863A100D4784E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				61005B6825B863DB00D4784E /* MoviesList.json */,
+				61005B6D25B8641100D4784E /* SingleMovie.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +308,9 @@
 			files = (
 				61005ADE25B80FF400D4784E /* LaunchScreen.storyboard in Resources */,
 				61005B1B25B8282400D4784E /* MovieTableViewCell.xib in Resources */,
+				61005B6925B863DB00D4784E /* MoviesList.json in Resources */,
 				61005ADB25B80FF400D4784E /* Assets.xcassets in Resources */,
+				61005B6E25B8641100D4784E /* SingleMovie.json in Resources */,
 				61005AD925B80FF200D4784E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61005B2E25B838F400D4784E /* MovieModel.swift in Sources */,
+				61005B6325B85FA200D4784E /* MovieModel+Stub.swift in Sources */,
 				61005B0825B8141500D4784E /* MovieTableViewController.swift in Sources */,
 				61005B2025B8285F00D4784E /* MovieTableViewCell.swift in Sources */,
 				61005AD625B80FF200D4784E /* DetailViewController.swift in Sources */,

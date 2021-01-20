@@ -22,6 +22,8 @@ class MovieTableViewController: UITableViewController{
         definesPresentationContext = true
         navigationItem.searchController = searchController
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        self.movies = MoviesModel.stubbedMoviesList
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
