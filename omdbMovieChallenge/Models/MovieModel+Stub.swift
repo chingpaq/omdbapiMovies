@@ -8,12 +8,11 @@
 import Foundation
 
 extension MoviesModel {
-    
+
     static var stubbedMoviesList: [MoviesModel.List.Movie] {
         let response: MoviesModel.List? = try? Bundle.main.loadAndDecodeJSON(filename: "MoviesList")
-        return response!.results!
+        return response?.results! ?? []
     }
-
     static var stubbedMovie: MoviesModel.List.Movie {
         stubbedMoviesList[0]
     }

@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.moviePosterImage.image = UIImage()
-        self.moviePosterImage.clipsToBounds = true
+        //self.moviePosterImage.clipsToBounds = true
         
     }
     func loadMovie(withID id: String){

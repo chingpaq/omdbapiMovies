@@ -18,29 +18,11 @@ class omdbMovieChallengeTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
     func testMoviesModel() {
-        let testBundle = Bundle(for: type(of: self))// different bundle for tests
-        guard let url = testBundle.url(forResource: "MoviesList", withExtension: "json") else {
-            return
-        }
-        do {
-            let jsonData = try Data(contentsOf: url)
-            let jsonDecoder = JSONDecoder()
-            let movie = try jsonDecoder.decode(MoviesModel.List.self, from: jsonData)
-            print(movie)
-        } catch { XCTFail(error.localizedDescription) }
+        var movies = [MoviesModel.List.Movie]()
+        // TODO - Change a value in MoviesList.json from string to a numerical value to force the error (ie "2012" to 2012)
+        movies = MoviesModel.stubbedMoviesList
+        XCTAssertTrue(movies.count>0)
     }
     
     
