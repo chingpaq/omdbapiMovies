@@ -9,14 +9,13 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell{
     
+    @IBOutlet weak var movieYearLabel: UILabel!
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
     private let networkServices = NetworkServices.shared()
     
     func configureCell(with info: MoviesModel.List.Movie){
         let activityView = UIActivityIndicatorView()
-        //activityView.style = .UIActivityIndicatorView.Style.medium
-        
         movieImageView.image = UIImage()
         movieImageView.clipsToBounds = true
         movieImageView.addSubview(activityView)
@@ -35,12 +34,19 @@ class MovieTableViewCell: UITableViewCell{
             }
         })
         
-        movieNameLabel.numberOfLines = 0
+        movieNameLabel.numberOfLines = 2
         movieNameLabel.lineBreakMode = .byWordWrapping
         movieNameLabel.adjustsFontSizeToFitWidth = true
         movieNameLabel.minimumScaleFactor = 0.8
-        movieNameLabel.font = UIFont.preferredFont(forTextStyle: .title2)
         movieNameLabel.text = info.title
+        
+        movieYearLabel.numberOfLines = 2
+        movieYearLabel.lineBreakMode = .byWordWrapping
+        movieYearLabel.adjustsFontSizeToFitWidth = true
+        movieYearLabel.minimumScaleFactor = 0.8
+        movieYearLabel.text = "(\(info.year))"
+        
+        
     }
     
 }

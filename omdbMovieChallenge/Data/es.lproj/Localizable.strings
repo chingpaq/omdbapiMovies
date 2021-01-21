@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  omdbMovieChallenge
+
+  Created by *_* on 1/21/21.
+  
+*/
+
+"Search_Failure" = "Búsqueda fallida";
+"App_Title" = "OMDB Desafío de película";
+"Search_PlaceholderText" = "Escriba el título de la película";
