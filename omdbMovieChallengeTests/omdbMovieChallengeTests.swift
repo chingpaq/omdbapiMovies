@@ -29,5 +29,21 @@ class omdbMovieChallengeTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testMoviesModel() {
+        let testBundle = Bundle(for: type(of: self))// different bundle for tests
+        guard let url = testBundle.url(forResource: "MoviesList", withExtension: "json") else {
+            return
+        }
+        do {
+            let jsonData = try Data(contentsOf: url)
+            let jsonDecoder = JSONDecoder()
+            let movie = try jsonDecoder.decode(MoviesModel.List.self, from: jsonData)
+            print(movie)
+        } catch { XCTFail(error.localizedDescription) }
+    }
+    
+    
+    
 
 }

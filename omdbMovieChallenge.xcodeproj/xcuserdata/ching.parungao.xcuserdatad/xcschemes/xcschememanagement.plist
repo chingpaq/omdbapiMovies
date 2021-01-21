@@ -7,7 +7,35 @@
 		<key>omdbMovieChallenge.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>omdbMovieChallengeTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>omdbMovieChallengeUITests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>61005ACD25B80FF200D4784E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61005AE325B80FF400D4784E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>61005AEE25B80FF400D4784E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
