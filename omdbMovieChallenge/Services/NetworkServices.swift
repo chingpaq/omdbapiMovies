@@ -77,7 +77,7 @@ extension Failure: LocalizedError {
         case .invalidResults(let errorMessage):
             return NSLocalizedString(errorMessage, comment: "")
         case .invalidStatusCode(let errorMessage):
-            return NSLocalizedString("Invalid HTTP status code:\(errorMessage ?? -1)", comment: "")
+            return NSLocalizedString("Invalid HTTP status code: \(errorMessage ?? -1)", comment: "")
         }
     }
 }

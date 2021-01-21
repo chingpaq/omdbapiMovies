@@ -10,12 +10,10 @@ import Foundation
 enum OMDBAPIServices {
     case SearchMovies
 }
-
 extension OMDBAPIServices {
     var omdbAPIKey:String {
      return "f70944e2"
     }
-    
     var url:String {
         let omdbAPIURL = "http://www.omdbapi.com"
         switch(self){

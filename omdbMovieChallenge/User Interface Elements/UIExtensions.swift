@@ -8,18 +8,6 @@
 import UIKit
 import Foundation
 
-extension UISearchBar {
-    private var activityIndicator: UIActivityIndicatorView? {
-        return searchTextField.leftView?.subviews.compactMap{ $0 as? UIActivityIndicatorView}.first
-    }
-    
-    public func start() {
-        if (activityIndicator==nil){
-            activityIndicator?.startAnimating()
-        }
-    }
-}
-
 extension UIViewController {
     func showAlert(title: String, alertMessage: String) {
         let alert = UIAlertController(title: title, message: alertMessage, preferredStyle: .alert)

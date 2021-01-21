@@ -36,7 +36,6 @@ extension NetworkServices {
         queries.append(URLQueryItem(name: "i", value: imdbID))
         queries.append(URLQueryItem(name: "r", value: "json"))
         queries.append(URLQueryItem(name: "apiKey", value: OMDBAPIServices.SearchMovies.omdbAPIKey))
-        
         request(url: OMDBAPIServices.SearchMovies.url, httpMethod: "get", headers: nil, body: nil, parameters: queries){
             (data, response, status, error)  in
             if let _data = data, status == 200 {

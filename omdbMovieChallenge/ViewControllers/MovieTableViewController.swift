@@ -23,7 +23,6 @@ class MovieTableViewController: UITableViewController{
         navigationItem.searchController = searchController
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
-        
         // FIXME: - remove if starting from a blank table
         self.movies = MoviesModel.stubbedMoviesList
     }

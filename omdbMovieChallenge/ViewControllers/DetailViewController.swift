@@ -41,14 +41,13 @@ class DetailViewController: UIViewController {
                     self?.movieNameLabel.text = "\(movie.title) (\(movie.year))"
                     self?.moviePlotLabel.text = movie.plot
                     self?.releasedLabel.text = movie.released
-                    self?.genreLabel.text = "\(movie.genre) \(movie.rated)"
+                    self?.genreLabel.text = "\(movie.genre) (\(movie.rated))"
                     self?.writerLabel.text = movie.writer
                     self?.actorsLabel.text = movie.actors
                     self?.directorLabel.text = movie.director
                     self?.languagesLabel.text = movie.language
                     self?.boxOfficeLabel.text = movie.boxOffice
                     self?.productionLabel.text = movie.production
-                    
                     }
                     self?.networkServices.getImage(url: movie.poster, handler: { [weak self] (data, error) in
                         if let _data = data {
@@ -58,11 +57,7 @@ class DetailViewController: UIViewController {
                             }
                         }
                     })
-                    
-                }else{
                 }
-                
-            }else{
             }
         }
     }
