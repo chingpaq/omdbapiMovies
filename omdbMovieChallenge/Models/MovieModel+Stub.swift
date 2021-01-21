@@ -17,7 +17,6 @@ extension MoviesModel {
     static var stubbedMovie: MoviesModel.List.Movie {
         stubbedMoviesList[0]
     }
-    
 }
 
 extension Bundle {

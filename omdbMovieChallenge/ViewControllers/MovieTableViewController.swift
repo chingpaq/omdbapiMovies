@@ -14,15 +14,17 @@ class MovieTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "OMDB Movie Challenge"
-        searchController.searchBar.placeholder = "Type Movie Title"
+        self.navigationItem.title = LILocalizedString("App_Title", comment: "OMDB Movie Challenge")
+        searchController.searchBar.placeholder = LILocalizedString("Search_PlaceholderText", comment: "Type Movie Title")
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         navigationItem.searchController = searchController
+        tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
+        // FIXME: - remove if starting from a blank table
         self.movies = MoviesModel.stubbedMoviesList
     }
     
@@ -61,7 +63,7 @@ class MovieTableViewController: UITableViewController{
     
     func search(for movieName: String, page: Int, handler: @escaping ((Bool, Error?) -> Void)) {
         networkService.searchMovies(for: movieName, page: page) { (searchObject, error) in
-            if let search = searchObject, error == nil {
+            if let _ = searchObject, error == nil {
                 if let searchReasults = searchObject?.results {
                     self.movies = searchReasults
                     DispatchQueue.main.async {
@@ -76,7 +78,6 @@ class MovieTableViewController: UITableViewController{
                 }
                 handler(true, nil)
             }else{
-                print(error?.localizedDescription ?? "Error")
                 handler(false, error)
             }
         }
@@ -85,14 +86,10 @@ class MovieTableViewController: UITableViewController{
  
 extension MovieTableViewController: UISearchResultsUpdating {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text!)
         search(for: searchBar.text ?? "", page: 1) {[weak self] (done, error) in
-            DispatchQueue.main.async {
-                //self?.searchController.searchBar.isLoading = false
-            }
+            // TODO - A search for a movie may return several rows and they are divided into pages as indicated in the OMDB data (). This function only reads the 1st page
             if !done {
-                print(error?.localizedDescription ?? "Error")
-//                self?.showAlert(title: "Search failed!", message: error?.localizedDescription ?? "Error")
+                self?.showAlert(title: LILocalizedString("Search_Failure", comment: "Search failed!"), alertMessage: error?.localizedDescription ?? "Error")
             }
         }
     }

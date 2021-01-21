@@ -24,6 +24,9 @@
 		61005B6325B85FA200D4784E /* MovieModel+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61005B6225B85FA200D4784E /* MovieModel+Stub.swift */; };
 		61005B6925B863DB00D4784E /* MoviesList.json in Resources */ = {isa = PBXBuildFile; fileRef = 61005B6825B863DB00D4784E /* MoviesList.json */; };
 		61005B6E25B8641100D4784E /* SingleMovie.json in Resources */ = {isa = PBXBuildFile; fileRef = 61005B6D25B8641100D4784E /* SingleMovie.json */; };
+		61F8E55B25B930A0008739DC /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F8E55A25B930A0008739DC /* UIExtensions.swift */; };
+		61F8E56025B939EE008739DC /* LocalizationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F8E55F25B939EE008739DC /* LocalizationServices.swift */; };
+		61F8E56525B93B79008739DC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 61F8E56425B93B79008739DC /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		61005B6225B85FA200D4784E /* MovieModel+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieModel+Stub.swift"; sourceTree = "<group>"; };
 		61005B6825B863DB00D4784E /* MoviesList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MoviesList.json; sourceTree = "<group>"; };
 		61005B6D25B8641100D4784E /* SingleMovie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SingleMovie.json; sourceTree = "<group>"; };
+		61F8E55A25B930A0008739DC /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		61F8E55F25B939EE008739DC /* LocalizationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationServices.swift; sourceTree = "<group>"; };
+		61F8E56425B93B79008739DC /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,7 @@
 				61005B3625B83CBE00D4784E /* NetworkServices.swift */,
 				61005B3F25B8416F00D4784E /* NetworkServices+OMDBAPI.swift */,
 				61005B4925B8446100D4784E /* OMDBAPIServices.swift */,
+				61F8E55F25B939EE008739DC /* LocalizationServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 			children = (
 				61005B5525B8536700D4784E /* Xibs and Storyboards */,
 				61005B1F25B8285F00D4784E /* MovieTableViewCell.swift */,
+				61F8E55A25B930A0008739DC /* UIExtensions.swift */,
 			);
 			path = "User Interface Elements";
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 			children = (
 				61005B6825B863DB00D4784E /* MoviesList.json */,
 				61005B6D25B8641100D4784E /* SingleMovie.json */,
+				61F8E56425B93B79008739DC /* Localizable.strings */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -213,6 +222,7 @@
 				61005ACA25B80FF200D4784E /* Sources */,
 				61005ACB25B80FF200D4784E /* Frameworks */,
 				61005ACC25B80FF200D4784E /* Resources */,
+				61F8E55025B925A0008739DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -309,6 +319,7 @@
 				61005ADE25B80FF400D4784E /* LaunchScreen.storyboard in Resources */,
 				61005B1B25B8282400D4784E /* MovieTableViewCell.xib in Resources */,
 				61005B6925B863DB00D4784E /* MoviesList.json in Resources */,
+				61F8E56525B93B79008739DC /* Localizable.strings in Resources */,
 				61005ADB25B80FF400D4784E /* Assets.xcassets in Resources */,
 				61005B6E25B8641100D4784E /* SingleMovie.json in Resources */,
 				61005AD925B80FF200D4784E /* Main.storyboard in Resources */,
@@ -331,6 +342,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		61F8E55025B925A0008739DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		61005ACA25B80FF200D4784E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -338,7 +369,9 @@
 			files = (
 				61005B2E25B838F400D4784E /* MovieModel.swift in Sources */,
 				61005B6325B85FA200D4784E /* MovieModel+Stub.swift in Sources */,
+				61F8E56025B939EE008739DC /* LocalizationServices.swift in Sources */,
 				61005B0825B8141500D4784E /* MovieTableViewController.swift in Sources */,
+				61F8E55B25B930A0008739DC /* UIExtensions.swift in Sources */,
 				61005B2025B8285F00D4784E /* MovieTableViewCell.swift in Sources */,
 				61005AD625B80FF200D4784E /* DetailViewController.swift in Sources */,
 				61005B3725B83CBE00D4784E /* NetworkServices.swift in Sources */,
